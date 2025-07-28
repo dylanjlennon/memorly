@@ -10,7 +10,8 @@
  */
 
 // Replace with your Supabase project credentials
-const SUPABASE_URL = '';
+con
+  st SUPABASE_URL = '';
 const SUPABASE_ANON_KEY = '';
 
 // Uncomment and import Supabase client when ready
@@ -79,6 +80,7 @@ startBtn.addEventListener('click', async () => {
   } catch (err) {
     console.error('Error accessing microphone:', err);
     alert('Could not start recording.');
+
   }
 });
 
