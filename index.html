@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memorly – Capture Your Memories</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Memorly <span class="accent">Memory Capture</span>
+        </h1>
+        <p class="hero-subtitle">
+          Record or type your memories. Let AI transcribe, summarize, and organize
+          them into personal anecdotes.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn primary" id="recordBtn">Record Memory</button>
+          <button class="btn secondary" id="textBtn">Add Text Memory</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features">
+      <h2>Features</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="icon" aria-hidden="true">🎤</div>
+          <h3>Voice & Text Capture</h3>
+          <p>Record audio or type a note directly in the browser.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon" aria-hidden="true">🧠</div>
+          <h3>AI Summaries</h3>
+          <p>Transcribe your recordings and get concise summaries.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon" aria-hidden="true">🏷️</div>
+          <h3>Smart Tagging</h3>
+          <p>Automatically categorize memories with keywords.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon" aria-hidden="true">🔒</div>
+          <h3>Privacy & Control</h3>
+          <p>Decide where each memory appears — blog, newsletter, or about page.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal for Recording -->
+    <div class="modal" id="recordModal" hidden>
+      <div class="modal-content">
+        <button class="modal-close" id="closeRecord">×</button>
+        <h2>Record Memory</h2>
+        <p>Click start to begin recording. Click stop when you’re done.</p>
+        <div class="record-controls">
+          <button class="btn primary" id="startRecording">Start</button>
+          <button class="btn" id="stopRecording" disabled>Stop</button>
+        </div>
+        <audio id="audioPlayback" controls hidden></audio>
+        <button class="btn primary" id="saveRecording" disabled>Save Memory</button>
+      </div>
+    </div>
+
+    <!-- Modal for Text Input -->
+    <div class="modal" id="textModal" hidden>
+      <div class="modal-content">
+          <button class="modal-close" id="closeText">×</button>
+          <h2>Add Text Memory</h2>
+          <input type="text" id="textTitle" placeholder="Title" />
+          <textarea id="textContent" placeholder="What do you want to remember?" rows="6"></textarea>
+          <button class="btn primary" id="saveText">Save Memory</button>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" hidden></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
